@@ -7,12 +7,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
+      port: Number(process.env.DBPORT),
       username: process.env.DBUSER,
       password: process.env.DBPASSWORD,
-      database: 'todo_list',
+      database: process.env.DBNAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false, // só use true em dev, cria tabelas automaticamente
+      synchronize: true, // só use true em dev, cria tabelas automaticamente
     })]
 })
 export class AppModule {}
