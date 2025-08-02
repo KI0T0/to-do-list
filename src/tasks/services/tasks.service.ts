@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateTaskDto } from './dto/create-task.dto';
+import { CreateTaskDto } from '../dto/create-task.dto';
 
 @Injectable() // isso significa que essa classe será "injetada" dentro da Controller
 export class TasksService {
